@@ -12,9 +12,9 @@ public class StudentServices {
 	List<Student> students = new ArrayList<>();
 	public void createStudents() {
 		students.add(new Student(1, "himabindu", 1, 11));
-		students.add(new Student(2, "bindu", 2, 22));
+		students.add(new Student(4, "bindu", 2, 22));
 		students.add(new Student(3, "hima",3, 33));
-		students.add(new Student(4, "himani", 4, 44));
+		students.add(new Student(2, "himani", 4, 44));
 	}
 	public List<Student> getStudents(){
 		createStudents();
@@ -26,5 +26,8 @@ public class StudentServices {
 		Student student=  students.stream().filter(s -> s.getId() == id ).findFirst().get();
 		return student;
 	}
-
+	public void addStudent(Student student) {
+		System.out.println("controllers add student");
+		students.add(student);
+	}
 }
